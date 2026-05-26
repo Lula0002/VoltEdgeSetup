@@ -4,16 +4,18 @@
 
 ---
 
-## 📥 Få koden
+## 📥 Få koden på jeres GitHub
 
-Åbn en terminal og kør:
+1. **Fork** repoet: Gå til https://github.com/Lula0002/VoltEdge → tryk **Fork** (øverst til højre)
+2. Åbn en terminal og kør:
 
 ```bash
-git clone https://github.com/Lula0002/VoltEdge.git
+git clone https://github.com/jeres-brugernavn/VoltEdge.git
 cd VoltEdge
 ```
 
-Du har nu hele projektet lokalt.
+> I skal **forke** fordi I ikke kan pushe til Lula0002's repo.  
+> Når I forker, får I jeres egen kopi hvor I kan commit'e og deploy'e fra.
 
 ---
 
@@ -50,7 +52,7 @@ Klik **Save**.
 ### Step 3 — Sæt CI/CD op
 
 1. **App Service → Deployment Center → GitHub**
-2. Authorize GitHub → vælg `Lula0002/VoltEdge` repo → `main` branch
+2. Authorize GitHub → vælg **jeres fork** (fx `jeres-brugernavn/VoltEdge`) → `main` branch
 3. Azure opretter automatisk et **publish profile secret** i jeres GitHub repo
 
 ### Step 4 — Trigger første deploy
