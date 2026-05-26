@@ -59,8 +59,7 @@ python -m uvicorn main:app --reload --port 8000
 
 | URL | What to expect |
 |-----|----------------|
-| http://localhost:8000/health | `{"status":"healthy"}` |
-| http://localhost:8000/docs | Swagger UI with all 12 endpoints |
+| http://localhost:8000/docs | Swagger UI with all endpoints |
 
 ---
 
@@ -129,8 +128,8 @@ Tick these off before the exam:
 
 | # | Check | Status |
 |---|-------|--------|
-| 1 | `https://your-app.azurewebsites.net/health` returns 200 | ☐ |
-| 2 | `https://your-app.azurewebsites.net/docs` shows Swagger UI | ☐ |
+| 1 | `https://your-app.azurewebsites.net/docs` shows Swagger UI | ☐ |
+| 2 | Create a session via Swagger → rated → invoice generated | ☐ |
 | 3 | Create a session via Swagger → rated → invoice generated | ☐ |
 | 4 | GitHub Actions workflow shows green checkmark | ☐ |
 | 5 | Tables created automatically (`init_db()` runs on startup) | ☐ |
