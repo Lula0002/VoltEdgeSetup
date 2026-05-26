@@ -70,22 +70,7 @@ Startup Command: cd src && uvicorn main:app --host 0.0.0.0 --port 8000
 
 Click **Save**.
 
-### Step 3 — (Optional) Add MySQL Database
-
-If you want to demonstrate MySQL support:
-
-1. Create **Azure Database for MySQL Flexible Server** (Free tier B1ms)
-2. Add firewall rule: "Allow public access from Azure services"
-3. Create database named `voltedge`
-4. In App Service → **Settings → Environment variables**, add:
-
-   ```
-   DATABASE_URL = mysql://user:password@your-server.mysql.database.azure.com:3306/voltedge
-   ```
-
-   > **No `DATABASE_URL`?** No problem — SQLite is used automatically (zero setup).
-
-### Step 4 — Set up CI/CD
+### Step 3 — Set up CI/CD
 
 #### Option A: GitHub Actions (recommended)
 
@@ -109,7 +94,7 @@ Compress-Archive -Path * -DestinationPath deploy.zip -Exclude "venv"
 # Upload through Azure Portal: App Service → Deployment Center → ZIP Deploy
 ```
 
-### Step 5 — Trigger First Deployment
+### Step 4 — Trigger First Deployment
 
 - Push any change to `main`, **or**
 - GitHub → **Actions** → **Deploy VoltEdge MVP to Azure Web App** → **Run workflow**
@@ -155,7 +140,7 @@ VoltEdge/
 │   ├── analytics_service/
 │   │   └── analytics_api.py       # ML anomaly detection
 │   └── shared/
-│       ├── database.py            # SQLite/MySQL with auto init_db()
+│       ├── database.py            # SQLite with auto init_db()
 │       ├── events.py              # Pydantic event models
 │       └── models.py              # DB models & queries
 ├── .github/workflows/
@@ -174,5 +159,4 @@ VoltEdge/
 | `uvicorn not found` | Activate venv first: `.\venv\Scripts\Activate.ps1` |
 | Port 8000 in use | Use another port: `uvicorn main:app --reload --port 8001` |
 | Azure deployment 403 | Subscription may be disabled → check billing in Azure Portal |
-| MySQL connection refused | Check firewall rules in Azure Database for MySQL |
 | Workflow fails on deploy | Verify publish profile secret name in GitHub matches workflow |
