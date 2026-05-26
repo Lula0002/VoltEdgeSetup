@@ -4,6 +4,19 @@
 
 ---
 
+## 📥 Få koden
+
+Åbn en terminal og kør:
+
+```bash
+git clone https://github.com/Lula0002/VoltEdge.git
+cd VoltEdge
+```
+
+Du har nu hele projektet lokalt.
+
+---
+
 ## ☁️ Deploy to Azure (1-2 timer)
 
 ### Step 1 — Opret Azure Web App
@@ -65,8 +78,6 @@ Hvis I vil teste lokalt først:
 <summary>🍏 Mac</summary>
 
 ```bash
-git clone https://github.com/Lula0002/VoltEdge.git
-cd VoltEdge
 python3 -m venv venv
 source venv/bin/activate
 pip install -r src/requirements.txt
@@ -79,8 +90,6 @@ uvicorn main:app --reload --port 8000
 <summary>🪟 Windows</summary>
 
 ```powershell
-git clone https://github.com/Lula0002/VoltEdge.git
-cd VoltEdge
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r src\requirements.txt
