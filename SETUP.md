@@ -12,21 +12,20 @@
 |------|---------|
 | Python | 3.12+ |
 | Git | any |
-| Terminal | PowerShell / Bash |
+| Terminal | Terminal.app / Bash / zsh |
 
 ### Steps
 
-```powershell
+```bash
 # 1. Clone the repo
 git clone https://github.com/Lula0002/VoltEdge.git
 cd VoltEdge
 
 # 2. Create virtual environment & install dependencies
-python -m venv venv
-.\venv\Scripts\Activate.ps1          # Windows
-# source venv/bin/activate           # Mac / Linux
+python3 -m venv venv
+source venv/bin/activate
 
-pip install -r src\requirements.txt
+pip install -r src/requirements.txt
 
 # 3. Start the server
 cd src
@@ -88,9 +87,9 @@ The workflow already exists at `.github/workflows/main_voltedge-app.yml`.
 
 #### Option B: Manual deploy via zip
 
-```powershell
+```bash
 # From repo root (without venv/)
-Compress-Archive -Path * -DestinationPath deploy.zip -Exclude "venv"
+zip -r deploy.zip . -x "venv/*"
 # Upload through Azure Portal: App Service → Deployment Center → ZIP Deploy
 ```
 
@@ -156,7 +155,7 @@ VoltEdge/
 
 | Problem | Solution |
 |---------|----------|
-| `uvicorn not found` | Activate venv first: `.\venv\Scripts\Activate.ps1` |
+| `uvicorn not found` | Activate venv first: `source venv/bin/activate` |
 | Port 8000 in use | Use another port: `uvicorn main:app --reload --port 8001` |
 | Azure deployment 403 | Subscription may be disabled → check billing in Azure Portal |
 | Workflow fails on deploy | Verify publish profile secret name in GitHub matches workflow |
