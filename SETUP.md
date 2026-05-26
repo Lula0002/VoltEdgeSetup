@@ -12,9 +12,11 @@
 |------|---------|
 | Python | 3.12+ |
 | Git | any |
-| Terminal | Terminal.app / Bash / zsh |
 
 ### Steps
+
+<details>
+<summary>🍏 Mac</summary>
 
 ```bash
 # 1. Clone the repo
@@ -31,6 +33,27 @@ pip install -r src/requirements.txt
 cd src
 uvicorn main:app --reload --port 8000
 ```
+</details>
+
+<details>
+<summary>🪟 Windows</summary>
+
+```powershell
+# 1. Clone the repo
+git clone https://github.com/Lula0002/VoltEdge.git
+cd VoltEdge
+
+# 2. Create virtual environment & install dependencies
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+pip install -r src\requirements.txt
+
+# 3. Start the server
+cd src
+python -m uvicorn main:app --reload --port 8000
+```
+</details>
 
 ### Verify
 
@@ -155,7 +178,7 @@ VoltEdge/
 
 | Problem | Solution |
 |---------|----------|
-| `uvicorn not found` | Activate venv first: `source venv/bin/activate` |
+| `uvicorn not found` | Activate venv first: `source venv/bin/activate` (Mac) or `.\venv\Scripts\Activate.ps1` (Windows) |
 | Port 8000 in use | Use another port: `uvicorn main:app --reload --port 8001` |
 | Azure deployment 403 | Subscription may be disabled → check billing in Azure Portal |
 | Workflow fails on deploy | Verify publish profile secret name in GitHub matches workflow |
